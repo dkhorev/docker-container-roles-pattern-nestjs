@@ -1,5 +1,5 @@
-import { Module } from '@nestjs/common';
 import { BullModule } from '@nestjs/bull';
+import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
@@ -8,13 +8,24 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         redis: {
-          host: configService.get('REDIS_HOST') || 'redis',
+          host: configService.get('REDIS_HOST') || '127.0.0.1',
           port: +configService.get('REDIS_PORT') || 6379,
           password: configService.get('REDIS_PASSWORD') || undefined,
+        },
+        defaultJobOptions: {
+          removeOnComplete: false,
+          removeOnFail: false,
         },
       }),
       inject: [ConfigService],
     }),
+    BullModule.registerQueue({
+      name: 'math-add',
+    }),
+    BullModule.registerQueue({
+      name: 'cron-jobs',
+    }),
   ],
+  exports: [BullModule],
 })
 export class CommonModule {}
