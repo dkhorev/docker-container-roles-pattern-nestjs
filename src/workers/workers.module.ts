@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { CommonModule } from '../common/common.module';
-import { WorkersService } from './workers.service';
+import { CronJobsService } from './cron-jobs.service';
+import { MathAddService } from './math-add.service';
 
 @Module({
   imports: [CommonModule],
-  providers: [WorkersService],
+  providers: [MathAddService, CronJobsService],
 })
 export class WorkersModule {}

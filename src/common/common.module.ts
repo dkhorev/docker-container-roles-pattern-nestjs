@@ -13,8 +13,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
           password: configService.get('REDIS_PASSWORD') || undefined,
         },
         defaultJobOptions: {
-          removeOnComplete: false,
-          removeOnFail: false,
+          removeOnComplete: true,
+          removeOnFail: true,
         },
       }),
       inject: [ConfigService],

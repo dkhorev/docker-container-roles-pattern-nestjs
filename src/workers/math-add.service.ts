@@ -4,11 +4,11 @@ import { Job } from 'bull';
 import { MatdAddJob } from '../common/models/matd-add.job';
 
 @Processor('math-add')
-export class WorkersService {
+export class MathAddService {
   protected readonly logger = new Logger(this.constructor.name);
 
   @Process()
-  mathAdd(job: Job<MatdAddJob>) {
+  process(job: Job<MatdAddJob>) {
     this.logger.log(
       `Result job: math add ${job.data.a} and ${job.data.b} equals ${
         job.data.a + job.data.b
