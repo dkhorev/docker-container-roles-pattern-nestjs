@@ -1,0 +1,1 @@
+# Demo: Docker container roles pattern for NestJS apps
