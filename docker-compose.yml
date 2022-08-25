@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - mode: host
+        published: 6379
+        target: 6379
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+    logging:
+      driver: json-file
+      options:
+        max-size: "1000k"
+        max-file: "2"
+
+#  api:
+#    image: role-app:latest
+#    deploy:
+#      mode: replicated
+#      replicas: 2
+#      restart_policy:
+#        condition: on-failure
+#    volumes:
+#      - ./storage/logs:/var/www/html/storage/logs
+#    environment:
+#      - CONTAINER_ROLE=api
+#      - REDIS_HOST=redis
+#      - REDIS_PASSWORD=
+#      - REDIS_PORT=6379
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "1000k"
+#        max-file: "2"
+#
+#  cron:
+#    image: role-app:latest
+#    deploy:
+#      mode: global
+#      restart_policy:
+#        condition: on-failure
+#    volumes:
+#      - ./storage/logs:/var/www/html/storage/logs
+#    environment:
+#      - CONTAINER_ROLE=cron
+#      - REDIS_HOST=redis
+#      - REDIS_PASSWORD=
+#      - REDIS_PORT=6379
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "1000k"
+#        max-file: "2"
+#
+#  workers:
+#    image: role-app:latest
+#    deploy:
+#      mode: replicated
+#      replicas: 2
+#      restart_policy:
+#        condition: on-failure
+#    volumes:
+#      - ./storage/logs:/var/www/html/storage/logs
+#    environment:
+#      - CONTAINER_ROLE=workers
+#      - REDIS_HOST=redis
+#      - REDIS_PASSWORD=
+#      - REDIS_PORT=6379
+#    logging:
+#      driver: json-file
+#      options:
+#        max-size: "1000k"
+#        max-file: "2"
