@@ -1,0 +1,13 @@
+.git
+.env
+.idea
+.vscode
+.github
+
+node_modules
+
+dist
+test
+docker-compose.yml
+README.md
+.env.example
