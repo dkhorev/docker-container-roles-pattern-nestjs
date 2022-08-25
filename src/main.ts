@@ -19,11 +19,11 @@ async function bootstrap() {
       break;
     case 'cron':
       loader = CronModule;
-      port = 3001;
+      port = 3001; // only required for localhost testing
       break;
     case 'workers':
       loader = WorkersModule;
-      port = 3002;
+      port = 3002; // only required for localhost testing
       break;
   }
 
