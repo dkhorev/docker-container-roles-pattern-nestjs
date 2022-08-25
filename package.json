@@ -1,7 +1,17 @@
 {
   "name": "docker-container-roles-pattern-nestjs",
   "version": "0.0.1",
-  "description": "",
+  "description": "Docker container roles pattern for NestJS apps",
+  "keywords": [
+    "node.js",
+    "node.js patterns",
+    "nestjs patterns",
+    "nestjs",
+    "docker",
+    "backend",
+    "backend development",
+    "devops for backend devs"
+  ],
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -24,6 +34,7 @@
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/platform-fastify": "^9.0.11",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
