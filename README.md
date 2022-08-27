@@ -3,7 +3,7 @@
 This sample project demonstrates the usage of container role pattern when deploying NestJS apps.
 
 See the full article
-here: []()
+here: [https://medium.com/@dkhorev/docker-container-roles-pattern-for-nestjs-apps-ca8b07a08a9a](https://medium.com/@dkhorev/docker-container-roles-pattern-for-nestjs-apps-ca8b07a08a9a)
 
 ### Starting the app
 
